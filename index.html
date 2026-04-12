@@ -70,6 +70,43 @@
       color: #1a1a2e;
     }
 
+    .highlight-box {
+      background: #f0f4ff;
+      border-left: 4px solid #3b82f6;
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin-bottom: 16px;
+      font-size: 0.97rem;
+      color: #444;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      margin-bottom: 16px;
+    }
+
+    th {
+      background: #f5f7fa;
+      text-align: left;
+      padding: 8px 12px;
+      color: #1a1a2e;
+      font-weight: 600;
+      border-bottom: 2px solid #e8e8e8;
+    }
+
+    td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #f0f0f0;
+      color: #444;
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
     footer {
       margin-top: 48px;
       padding-top: 20px;
@@ -87,60 +124,164 @@
       h1 {
         font-size: 1.4rem;
       }
+
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      td {
+        padding: 6px 0;
+      }
+
+      td::before {
+        font-weight: 600;
+        color: #1a1a2e;
+        display: block;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 2px;
+      }
+
+      td:nth-child(1)::before { content: "Event"; }
+      td:nth-child(2)::before { content: "Data collected"; }
+      td:nth-child(3)::before { content: "Purpose"; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Privacy Policy for GeoFill: World Quiz</h1>
-    <p class="subtitle">Last updated: March 30, 2026</p>
+    <p class="subtitle">Last updated: April 12, 2026</p>
 
     <h2>Overview</h2>
     <p>
-      GeoFill: World Quiz ("the App") is a free geography quiz game developed by LappaProductions.
-      This Privacy Policy explains how the App handles information.
+      GeoFill: World Quiz ("the App") is a free geography quiz game with no advertisements,
+      developed by LappaProductions. This Privacy Policy explains what information is collected,
+      how it is used, and what is stored only on your device.
     </p>
 
-    <h2>Data We Do NOT Collect</h2>
-    <p>The App does not collect, store, or transmit any personal data. Specifically:</p>
+    <h2>What We Do NOT Collect</h2>
+    <p>The App never collects or transmits:</p>
     <ul>
-      <li>No account registration or login</li>
-      <li>No names, email addresses, or contact information</li>
-      <li>No location data</li>
-      <li>No advertising identifiers</li>
-      <li>No analytics or usage tracking</li>
-      <li>No data is shared with third parties</li>
+      <li>Your name, email address, or any contact information</li>
+      <li>Account credentials — there is no login or registration</li>
+      <li>Your location or GPS data</li>
+      <li>Advertising identifiers (Google Advertising ID and Android SSAID are disabled)</li>
+      <li>Any text you type while playing — your answers are never sent anywhere</li>
+      <li>Personal identifiers of any kind</li>
     </ul>
 
+    <h2>Anonymous Analytics (Firebase)</h2>
+    <div class="highlight-box">
+      The App uses <strong>Google Firebase Analytics</strong> to collect anonymous,
+      aggregated usage statistics. This data cannot be used to identify you personally.
+      IP addresses are automatically anonymised by Firebase before storage.
+      No advertising identifiers are collected.
+    </div>
+
+    <p>The following events are sent to Firebase:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Event</th>
+          <th>Data collected</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>App opened</td>
+          <td>Game language, device language</td>
+          <td>Understand which languages are used</td>
+        </tr>
+        <tr>
+          <td>Game started</td>
+          <td>Game mode (countries / capitals / continents / oceans), game language, continent filter (if any)</td>
+          <td>Understand which game modes are popular</td>
+        </tr>
+        <tr>
+          <td>Game completed</td>
+          <td>Game mode, number of correct answers, total items, time taken (seconds), whether a new personal record was set, game language, continent filter (if any)</td>
+          <td>Understand completion rates and difficulty</td>
+        </tr>
+        <tr>
+          <td>Game given up</td>
+          <td>Game mode, number of correct answers, total items, time taken (seconds), game language, continent filter (if any)</td>
+          <td>Understand where players find the game difficult</td>
+        </tr>
+        <tr>
+          <td>Language changed</td>
+          <td>Previous language code, new language code</td>
+          <td>Understand language switching patterns</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Firebase Analytics data is processed by Google LLC and stored on Google's servers,
+      which may be located outside your country of residence, including in the United States.
+      Google's processing is governed by its
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+      and the
+      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy and Security documentation</a>.
+    </p>
+    <p>
+      The legal basis for this processing is our legitimate interest in understanding how the
+      App is used so we can improve it (GDPR Article 6(1)(f)).
+    </p>
+
     <h2>Data Stored Locally on Your Device</h2>
-    <p>The App stores the following data only on your device using local storage:</p>
+    <p>The App stores the following data only on your device using local storage (AsyncStorage):</p>
     <ul>
-      <li>Your best times and high scores for each game mode</li>
+      <li>Your best completion times for each game mode</li>
+      <li>Your best scores for each game mode</li>
       <li>Your selected interface language</li>
     </ul>
-    <p>This data never leaves your device and can be cleared by uninstalling the App.</p>
+    <p>This data never leaves your device and is permanently deleted when you uninstall the App.</p>
 
     <h2>Third-Party Links</h2>
     <p>
-      The App contains a link to Ko-fi (ko-fi.com) for optional donations. Tapping this link
-      opens your device's browser and is subject to Ko-fi's own privacy policy. We have no
-      control over and assume no responsibility for Ko-fi's content or privacy practices.
+      The App contains a link to <strong>Ko-fi</strong> (ko-fi.com) for voluntary donations.
+      Tapping this link opens your device browser and is governed by
+      <a href="https://ko-fi.com/privacy" target="_blank" rel="noopener">Ko-fi's Privacy Policy</a>.
+      We have no access to any data you provide on Ko-fi.
     </p>
 
     <h2>Children's Privacy</h2>
     <p>
-      The App does not knowingly collect any data from anyone, including children under the age of 13.
+      The App does not knowingly collect personal data from anyone, including children under
+      the age of 13. The anonymous analytics described above do not constitute personal data
+      collection within the meaning of COPPA or GDPR.
+    </p>
+
+    <h2>Your Rights (GDPR)</h2>
+    <p>
+      If you are located in the European Economic Area, you have the right to object to the
+      processing of your data on grounds of legitimate interest. Because all analytics data is
+      fully anonymous and not linked to any identifier, we are unable to retrieve or delete
+      data for a specific individual. If you wish to opt out of analytics entirely, you can
+      do so through your device's system settings
+      (<strong>Settings → Google → Ads → Delete advertising ID</strong>
+      or by limiting ad tracking), which also prevents Firebase from associating any
+      installation-level identifiers.
     </p>
 
     <h2>Changes to This Policy</h2>
     <p>
-      We may update this Privacy Policy occasionally. Any changes will be posted at the URL
-      where this policy is hosted.
+      We may update this Privacy Policy when the App's functionality changes. The latest
+      version is always available at the URL where this page is hosted. The "Last updated"
+      date at the top of this page reflects when material changes were last made.
     </p>
 
     <h2>Contact</h2>
     <p>
-      If you have questions about this Privacy Policy, contact us at:
+      If you have questions about this Privacy Policy, please contact us at:<br />
       <a href="mailto:teemupaunonen@gmail.com">teemupaunonen@gmail.com</a>
     </p>
 
